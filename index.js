@@ -101,11 +101,14 @@ const rateDisplay = document.querySelector('#rate');
 const coffeeBtn = document.querySelector('#coffee');
 const producersList = document.querySelector('#producers-list');
 const scoreDisplay = document.querySelector('#score');
+const audio = document.querySelector('audio');
+totalScore = 0;
 score = 0;
 rate = 0;
 
 function clickCoffee() {
-  score += 50;
+  totalScore++;
+  score++;
   scoreDisplay.innerText = score;
 }
 
@@ -140,7 +143,7 @@ function createProducer(producer) {
 
 function renderProducersList() {
   for (let producer of coffeeMakers) {
-    if (!producer.isVisible && score >= producer.cost) {
+    if (!producer.isVisible && totalScore >= Math.floor(producer.cost * 0.7)) {
       createProducer(producer);
       producer.isVisible = true;
     }
@@ -164,14 +167,20 @@ function buyProducer(event) {
   scoreDisplay.innerText = score;
   quantityText.innerText = `Quantity: ${coffeeMakers[index].quantity}`;
   costText.innerText = `Cost: ${coffeeMakers[index].cost} coffee`;
+  audio.currentTime = 0;
+  audio.play();
 }
 
 setInterval(function () {
-  score += rate;
-  scoreDisplay.innerText = score;
-  renderProducersList();
+  if (rate > 0) {
+    totalScore += rate;
+    score += rate;
+    scoreDisplay.innerText = score;
+    renderProducersList();
+  }
 }, 1000);
 
 coffeeBtn.addEventListener('click', () => {
   clickCoffee();
+  renderProducersList();
 });
