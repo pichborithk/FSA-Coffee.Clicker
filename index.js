@@ -102,9 +102,12 @@ const coffeeBtn = document.querySelector('#coffee');
 const producersList = document.querySelector('#producers-list');
 const scoreDisplay = document.querySelector('#score');
 const audio = document.querySelector('audio');
+const name = prompt('Please enter your name');
 totalScore = 0;
 score = 0;
 rate = 0;
+
+document.querySelector('#name').innerText = name;
 
 function clickCoffee() {
   totalScore++;
@@ -122,10 +125,10 @@ function createProducer(producer) {
   const rightDiv = document.createElement('div');
   const container = document.createElement('div');
   container.className = 'coffee-maker';
-  brandName.innerText = producer.name;
-  buyButton.dataset.id = producer.id;
   buyButton.innerText = 'Buy';
+  buyButton.dataset.id = producer.id;
   buyButton.addEventListener('click', buyProducer);
+  brandName.innerText = producer.name;
   quantityText.className = 'quantity';
   quantityText.innerText = `Quantity: ${producer.quantity}`;
   rateText.innerText = `Coffee/second: ${producer.rate}`;

@@ -1,7 +1,21 @@
+@font-face {
+  font-family: CuppaJoe;
+  src: url(./cuppajoe.regular.ttf);
+}
+
+@font-face {
+  font-family: 'Butter Chicken';
+  src: url(./Butter\ Chicken.ttf);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: #f6e1c3;
 }
 
 main {
@@ -35,16 +49,35 @@ img {
   cursor: pointer;
 }
 
+img:active {
+  transform: translateY(-3%);
+}
+
 .coffee-maker {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border: 1px solid #535353;
   padding: 5px 15px;
+  background-color: #e9a178;
+  border-radius: 10px;
+  box-shadow: 1px 1px 5px #949494;
+}
+
+.coffee-maker:hover {
+  transform: translate(-2%, 2%);
 }
 
 button {
   width: 50px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #4e6e81;
+  color: #fff;
 }
 
 p {
@@ -53,14 +86,24 @@ p {
 
 h1 {
   font-size: 36px;
+  font-family: CuppaJoe;
+}
+
+h2 {
+  font-family: 'Butter Chicken';
 }
 
 h3 {
   font-size: 24px;
   font-weight: 400;
+  font-family: 'Butter Chicken';
 }
 
 h4 {
   font-size: 20px;
   font-weight: 400;
+}
+
+.welcome {
+  margin-bottom: 50px;
 }
