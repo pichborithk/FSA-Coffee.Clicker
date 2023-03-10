@@ -1,11 +1,11 @@
 @font-face {
   font-family: CuppaJoe;
-  src: url(./cuppajoe.regular.ttf);
+  src: url(./asset/CuppaJoe.regular.ttf);
 }
 
 @font-face {
   font-family: 'Butter Chicken';
-  src: url(./Butter\ Chicken.ttf);
+  src: url(./asset/ButterChicken.ttf);
 }
 
 * {
