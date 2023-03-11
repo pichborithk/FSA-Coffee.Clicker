@@ -97,7 +97,10 @@ const coffeeMakers = [
   },
 ];
 
-const name = prompt('Please enter your name');
+if (!localStorage.getItem('username')) {
+  localStorage.setItem('username', prompt('Please enter your name'));
+}
+const name = localStorage.getItem('username');
 const scoreDisplay = document.querySelector('#score');
 const rateDisplay = document.querySelector('#rate');
 const coffeeBtn = document.querySelector('#coffee');
