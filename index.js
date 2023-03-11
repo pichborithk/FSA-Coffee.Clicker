@@ -97,19 +97,19 @@ const coffeeMakers = [
   },
 ];
 
+const name = prompt('Please enter your name');
+const scoreDisplay = document.querySelector('#score');
 const rateDisplay = document.querySelector('#rate');
 const coffeeBtn = document.querySelector('#coffee');
 const producersList = document.querySelector('#producers-list');
-const scoreDisplay = document.querySelector('#score');
 const audio = document.querySelector('audio');
-const name = prompt('Please enter your name');
 totalScore = 0;
 score = 0;
 rate = 0;
 
 document.querySelector('#name').innerText = name;
 
-function clickCoffee() {
+function handleClickOnCoffee() {
   totalScore++;
   score++;
   scoreDisplay.innerText = score;
@@ -127,7 +127,7 @@ function createProducer(producer) {
   container.className = 'coffee-maker';
   buyButton.innerText = 'Buy';
   buyButton.dataset.id = producer.id;
-  buyButton.addEventListener('click', buyProducer);
+  buyButton.addEventListener('click', handleBuyProducer);
   brandName.innerText = producer.name;
   quantityText.className = 'quantity';
   quantityText.innerText = `Quantity: ${producer.quantity}`;
@@ -153,7 +153,7 @@ function renderProducersList() {
   }
 }
 
-function buyProducer(event) {
+function handleBuyProducer(event) {
   const producer = event.target.parentNode.parentNode;
   const quantityText = producer.querySelector('.quantity');
   const costText = producer.querySelector('.cost');
@@ -184,6 +184,6 @@ setInterval(function () {
 }, 1000);
 
 coffeeBtn.addEventListener('click', () => {
-  clickCoffee();
+  handleClickOnCoffee();
   renderProducersList();
 });

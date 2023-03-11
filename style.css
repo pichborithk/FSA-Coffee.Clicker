@@ -34,15 +34,26 @@ section {
   justify-content: center;
 }
 
-#producers-list {
-  border: 1px solid #000;
-  width: 90%;
-  min-height: 90%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 10px;
-  gap: 5px;
+p {
+  font-size: 14px;
+}
+
+/* =============================================== */
+/* Left Section */
+/* =============================================== */
+
+h1 {
+  font-size: 36px;
+  font-family: CuppaJoe;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.welcome {
+  margin-bottom: 50px;
 }
 
 img {
@@ -52,6 +63,37 @@ img {
 
 img:active {
   transform: translateY(-3%);
+}
+
+.credit {
+  position: absolute;
+  bottom: 1%;
+  text-align: center;
+}
+
+/* =============================================== */
+/* Right Section */
+/* =============================================== */
+
+h2 {
+  font-family: 'Butter Chicken';
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Butter Chicken';
+}
+
+#producers-list {
+  border: 1px solid #000;
+  width: 90%;
+  min-height: 90%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
 }
 
 .coffee-maker {
@@ -79,38 +121,4 @@ button {
 button:hover {
   background-color: #4e6e81;
   color: #fff;
-}
-
-p {
-  font-size: 14px;
-}
-
-h1 {
-  font-size: 36px;
-  font-family: CuppaJoe;
-}
-
-h2 {
-  font-family: 'Butter Chicken';
-}
-
-h3 {
-  font-size: 24px;
-  font-weight: 400;
-  font-family: 'Butter Chicken';
-}
-
-h4 {
-  font-size: 20px;
-  font-weight: 400;
-}
-
-.welcome {
-  margin-bottom: 50px;
-}
-
-.credit {
-  position: absolute;
-  bottom: 1%;
-  text-align: center;
 }
